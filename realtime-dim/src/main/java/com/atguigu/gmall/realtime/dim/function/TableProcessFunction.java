@@ -14,11 +14,11 @@ import org.apache.flink.util.Collector;
 import java.sql.Connection;
 import java.util.*;
 
-public class BroadCastFunction extends BroadcastProcessFunction<JSONObject, TableProcessDim, Tuple2<JSONObject, TableProcessDim>> {
+public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, TableProcessDim, Tuple2<JSONObject, TableProcessDim>> {
     private MapStateDescriptor<String, TableProcessDim> mapStateDescriptor;
     private Map<String,TableProcessDim> configMap = new HashMap<>();
 
-    public BroadCastFunction(MapStateDescriptor<String, TableProcessDim> mapStateDescriptor) {
+    public TableProcessFunction(MapStateDescriptor<String, TableProcessDim> mapStateDescriptor) {
         this.mapStateDescriptor = mapStateDescriptor;
     }
 

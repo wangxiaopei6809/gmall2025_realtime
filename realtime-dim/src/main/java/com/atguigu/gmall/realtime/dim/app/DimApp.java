@@ -7,7 +7,7 @@ import com.atguigu.gmall.realtime.common.bean.TableProcessDim;
 import com.atguigu.gmall.realtime.common.constant.Constant;
 import com.atguigu.gmall.realtime.common.util.FlinkSourceUtil;
 import com.atguigu.gmall.realtime.common.util.HBaseUtil;
-import com.atguigu.gmall.realtime.dim.function.BroadCastFunction;
+import com.atguigu.gmall.realtime.dim.function.TableProcessFunction;
 import com.atguigu.gmall.realtime.dim.function.HBaseSinkFunction;
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
@@ -61,7 +61,7 @@ public class DimApp extends BaseApp {
         //TODO 10. 处理关联后的数据（判断是否为维度）
         //processElement: 处理主流业务数据
         //processBroadcastElement: 处理广播流配置信息
-        SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDim>> dimDS = connectDS.process(new BroadCastFunction(mapStateDescriptor));
+        SingleOutputStreamOperator<Tuple2<JSONObject, TableProcessDim>> dimDS = connectDS.process(new TableProcessFunction(mapStateDescriptor));
         return dimDS;
     }
 
