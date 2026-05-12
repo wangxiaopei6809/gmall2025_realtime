@@ -1,4 +1,4 @@
-package com.atguigu.gmall.realtime.dim.app;
+package com.atguigu.gmall.realtime.dim;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
