@@ -3,7 +3,9 @@ package com.atguigu.gmall.realtime.common.constant;
 public class Constant {
 
     public static final String KAFKA_BROKERS = "hadoop102:9092,hadoop103:9092,hadoop104:9092";
-    
+
+    public static final String ZOOKEEPER_QUORUM = "hadoop102,hadoop103,hadoop104";
+
     public static final String TOPIC_DB = "topic_db";
     public static final String TOPIC_LOG = "topic_log";
     
